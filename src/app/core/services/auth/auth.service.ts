@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 // importacion de environment
 import { environment as env } from '../../../../environments/environment';
@@ -19,9 +20,7 @@ export class AuthService {
   private urlLogin = env.urlUser + 'login';
   private urlRegister = env.urlUser + 'register';
 
-  public isAuthenticate = false;
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   login(logObj: Log): Observable<Session>{
     return this.http.post<Session>(this.urlLogin, logObj);
@@ -32,12 +31,13 @@ export class AuthService {
   }
 
   getAuthSession(){
-    return sessionStorage.getItem('isAuth');
+    return sessionStorage.getItem('isAuth') ? true : false;
   }
 
   loggedInt(token: string){
     sessionStorage.setItem('token', token);
     sessionStorage.setItem('isAuth', 'success');
+    this.router.navigate(['/home']);
   }
   
   logOut(){

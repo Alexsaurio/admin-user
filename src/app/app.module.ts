@@ -12,6 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 
 // importacion de servicios
 import { UserService  } from './core/services/user/user.service';
@@ -45,6 +48,9 @@ import { RegisterComponent } from './layout/register/register.component';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatDividerModule,
 
   ],
   providers: [UserService, AuthService],
