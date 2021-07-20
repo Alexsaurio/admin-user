@@ -4,14 +4,21 @@ import { Routes, RouterModule } from '@angular/router';
 // importaciones del layout
 import { HomeComponent } from './layout/home/home.component';
 
+// importacion del guard
+import { AuthGuard } from './core/helpers/auth.guard';
+import { LoginComponent } from './layout/login/login.component';
+
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: '**', component: HomeComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: LoginComponent},
+  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: '**', component: HomeComponent , canActivate: [AuthGuard]}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
