@@ -1,21 +1,25 @@
 <mat-sidenav-container class="sidenav-container">
-<!-- *ngIf="true" -->
-    <mat-sidenav #sidenav="matSidenav" opened>
+    <mat-sidenav #sidenav="matSidenav">
 
         <img class="avatar" [src]="userView.avatar" />
         <h4 class="name">
-            <mat-icon>person</mat-icon>
+            <mat-icon color="primary">person</mat-icon>
             {{userView.first_name}} {{userView.last_name}}
         </h4>
         <p class="designation">
-            <mat-icon>email</mat-icon>
+            <mat-icon color="primary">email</mat-icon>
             {{userView.email}}
         </p>
-        <mat-divider></mat-divider>
+        <button mat-icon-button color="primary" aria-label="Edit information"
+            matTooltip="Edit information" matTooltipPosition="right">
+            <mat-icon>edite</mat-icon>
+        </button>
 
         <mat-divider></mat-divider>
 
-        <button mat-button class="menu-button" (click)="sidenav.toggle()">
+        <mat-divider></mat-divider>
+
+        <button color="primary" mat-button class="menu-button" (click)="sidenav.toggle()">
             <mat-icon>close</mat-icon>
             <span>Close</span>
         </button>

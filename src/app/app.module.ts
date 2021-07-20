@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // importacion de servicios
 import { UserService  } from './core/services/user/user.service';
@@ -51,7 +52,8 @@ import { RegisterComponent } from './layout/register/register.component';
     MatToolbarModule,
     MatSidenavModule,
     MatDividerModule,
-
+    MatTooltipModule
+    
   ],
   providers: [UserService, AuthService],
   bootstrap: [AppComponent]
