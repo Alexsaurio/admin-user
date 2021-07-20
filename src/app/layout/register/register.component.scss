@@ -1,0 +1,40 @@
+
+mat-card-subtitle{
+    margin-bottom: 50px;
+}
+
+mat-card-title,
+mat-card-subtitle,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+mat-form-field {
+    min-width: 200px;
+    width: 100%;
+}
+
+.error {
+    border-radius: 10px;
+    color: #f44336;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
+.button button {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.register {
+    text-align: right;
+    padding: 10px 5px;
+    a{
+        color: #f44336;
+        text-decoration: none;
+
+        &:visited { color: #444747 }
+    }
+}
