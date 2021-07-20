@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authservice.login(this.userForm.value).subscribe(
       response => {
-        this.authservice.loggedInt();
+        this.authservice.loggedInt(response.token);
         this.router.navigate(['/home']);
       },
       error => {

@@ -32,15 +32,16 @@ export class AuthService {
   }
 
   getAuthSession(){
-    return this.isAuthenticate;
+    return sessionStorage.getItem('isAuth');
   }
 
-  loggedInt(){
-    this.isAuthenticate = true;
+  loggedInt(token: string){
+    sessionStorage.setItem('token', token);
+    sessionStorage.setItem('isAuth', 'success');
   }
   
   logOut(){
-    this.isAuthenticate = false;
+    sessionStorage.clear()
   }
 
 
