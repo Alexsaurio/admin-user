@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   msgError = '';
 
   userForm: FormGroup = new FormGroup({
-    email: new FormControl('eve.holt@reqres.in'),
-    password: new FormControl('cityslicka'),
+    email: new FormControl(''),
+    password: new FormControl(''),
   });
 
   constructor(private authservice: AuthService, private router: Router) { }
