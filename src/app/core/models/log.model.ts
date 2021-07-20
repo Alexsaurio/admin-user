@@ -1,4 +1,4 @@
 export class Log {
-    name: string;
+    email: string;
     password: string;
 }
