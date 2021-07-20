@@ -5,8 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// importaciones de material angular
+import {MatIconModule} from '@angular/material/icon';
+
 // importacion de servicios
-import { UserService  } from './core/services/user.service';
+import { UserService  } from './core/services/user/user.service';
 
 // importacion del layout
 import { LoginComponent } from './layout/login/login.component';
@@ -25,7 +28,10 @@ import { HomeComponent } from './layout/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    // importaciones de material
+    MatIconModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
