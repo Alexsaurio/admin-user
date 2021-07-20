@@ -11,12 +11,46 @@
         color: white;
         padding: 30px 15px;
         text-align: center;
-        width: 200px;
+        width: 300px;
+
+        .avatar {
+            margin-top: 16px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .name {
+            margin-top: 12px;
+            font-weight: normal;
+            @extend .align-icon-text;
+            justify-content: center;
+        }
+
+        .designation {
+            font-size: 0.9rem;
+            color: lightgrey;
+            @extend .align-icon-text;
+            justify-content: center;
+        }
+
+        mat-divider {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .menu-button {
+            width: 100%;
+            @extend .align-icon-text;
+            justify-content: flex-start;
+        }
     }
 
     .sidenav-content {
         height: calc(100vh - 50px);
         margin: 20px;
+        background-color: salmon;
 
         display: flex;
         justify-content: center;
@@ -24,39 +58,13 @@
     }
 }
 
-.menu-button {
-    width: 100%;
+
+.align-icon-text {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
 
     mat-icon {
         margin-right: 8px;
+        font-size: 20px;
     }
 }
-
-.avatar {
-    margin-top: 16px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.name {
-    margin-top: 8px;
-    font-weight: normal;
-}
-
-.designation {
-    margin-top: 2px;
-    font-size: 0.7rem;
-    color: lightgrey;
-}
-
-mat-divider {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-

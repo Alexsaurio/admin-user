@@ -1,34 +1,29 @@
 <mat-sidenav-container class="sidenav-container">
-    <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+<!-- *ngIf="true" -->
+    <mat-sidenav #sidenav="matSidenav" opened>
 
-    <h4 class="name">John Smith</h4>
-    <p class="designation">Software Engineer</p>
-
-    <mat-divider></mat-divider>
-    <mat-sidenav mode="side" *ngIf="true" opened>
-        <button mat-button class="menu-button">
-            <mat-icon>home</mat-icon>
-            <span>Home</span>
-        </button>
-        <button mat-button class="menu-button">
+        <img class="avatar" [src]="userView.avatar" />
+        <h4 class="name">
             <mat-icon>person</mat-icon>
-            <span>Profile</span>
-        </button>
-        <button mat-button class="menu-button">
-            <mat-icon>info</mat-icon>
-            <span>About</span>
-        </button>
+            {{userView.first_name}} {{userView.last_name}}
+        </h4>
+        <p class="designation">
+            <mat-icon>email</mat-icon>
+            {{userView.email}}
+        </p>
+        <mat-divider></mat-divider>
 
         <mat-divider></mat-divider>
 
-        <button mat-button class="menu-button">
-            <mat-icon>help</mat-icon>
-            <span>Help</span>
+        <button mat-button class="menu-button" (click)="sidenav.toggle()">
+            <mat-icon>close</mat-icon>
+            <span>Close</span>
         </button>
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="sidenav-content">
             Main content
+            <button (click)="sidenav.toggle()">cerrar</button>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
