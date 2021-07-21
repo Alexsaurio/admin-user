@@ -1,9 +1,9 @@
 <div mat-subheader>
-    <h3>Posts</h3>
+    <h3>Posts: {{postsUserLength}}</h3>
 </div>
 <mat-list>
-    <mat-list-item *ngFor="let post of postsUser">
-        <div mat-line class="post-title">{{post.title}}</div>
+    <mat-list-item *ngFor="let post of postsUser; let i = index">
+        <div mat-line class="post-title">#{{i + 1}} - {{post.title}}</div>
         <div mat-line class="post-body">
             <p> {{ post.body }} </p>
         </div>
