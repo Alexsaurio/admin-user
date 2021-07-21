@@ -51,6 +51,13 @@
         </button>
     </mat-sidenav>
     <mat-sidenav-content>
+        <div class="nav-option">
+            <button color="primary" mat-button (click)="logOut()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </div>
+
         <div class="sidenav-content">
             <app-users></app-users>
             <!-- <button (click)="sidenav.toggle()">cerrar</button> -->

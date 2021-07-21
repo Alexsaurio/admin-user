@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
@@ -10,6 +8,7 @@ import { User } from 'src/app/core/models/user.model';
 // importacion de servicios
 import { UserService } from 'src/app/core/services/user/user.service';
 import { AlertService } from 'src/app/core/services/alert/alert.service';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -33,7 +32,7 @@ export class HomeComponent implements OnInit {
 
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userservice: UserService, private as: AlertService) { }
+  constructor(private fb: FormBuilder, private userservice: UserService, private as: AlertService, private authservice: AuthService) { }
 
   ngOnInit(): void {
     this.getUserDetail(2);
@@ -75,5 +74,11 @@ export class HomeComponent implements OnInit {
         this.as.alertError(error.error.error);
       }
     )
+  }
+
+
+  logOut(){
+    this.authservice.logOut();
+    this.as.alertSuccess('Logout success');
   }
 }
