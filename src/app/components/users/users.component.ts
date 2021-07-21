@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 
 // imoprtacion de modelos
@@ -13,6 +13,8 @@ import { UserService } from 'src/app/core/services/user/user.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+
+  @Output() public userView = new EventEmitter<User>();
 
   usersList: User[];
 
@@ -43,6 +45,10 @@ export class UsersComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  selectUser(user: User){
+    this.userView.emit(user);
   }
 
   changePage(event){

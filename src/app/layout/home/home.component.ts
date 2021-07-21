@@ -56,6 +56,11 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  selectUser(user: User){
+    this.userView = user;
+    this.sidenav.toggle();
+  }
+
   newFormUser(name: string, job: string){
     this.userForm = this.fb.group
     ({

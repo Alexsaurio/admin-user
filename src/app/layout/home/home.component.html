@@ -59,8 +59,7 @@
         </div>
 
         <div class="sidenav-content">
-            <app-users></app-users>
-            <!-- <button (click)="sidenav.toggle()">cerrar</button> -->
+            <app-users (userView)="selectUser($event)"></app-users>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
