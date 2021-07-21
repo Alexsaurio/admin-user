@@ -16,6 +16,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
+// import { MatListItemModule } from '@angular/material/';
+
 
 // importacion de servicios
 import { UserService  } from './core/services/user/user.service';
@@ -27,6 +30,8 @@ import { HomeComponent } from './layout/home/home.component';
 import { RegisterComponent } from './layout/register/register.component';
 
 //importacion de componentes
+import { PostsComponent } from './components/posts/posts.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 @NgModule({
@@ -34,7 +39,9 @@ import { RegisterComponent } from './layout/register/register.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    PostsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,8 @@ import { RegisterComponent } from './layout/register/register.component';
     MatToolbarModule,
     MatSidenavModule,
     MatDividerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatListModule
     
   ],
   providers: [UserService, AuthService],

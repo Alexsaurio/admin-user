@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 
 // importacion de environment
 import { environment as env } from '../../../../environments/environment';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +15,8 @@ export class UserService {
   private urlUsers = env.urlUser + 'users';
 
   // urls para el consumo de API post
-  private urlPosts = env.urlPost + 'posts?userId='
+  private urlPosts = env.urlPost + 'posts?userId=';
+  private urlDelPost = env.urlPost + 'posts/';
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +30,10 @@ export class UserService {
 
   getUserPosts(userId: number): Observable<any> {
     return this.http.get<any>(this.urlPosts + userId);
+  }
+
+  deleteUserPost(postId: number): Observable<any> {
+    return this.http.delete<any>(this.urlDelPost + postId);
   }
 
 }

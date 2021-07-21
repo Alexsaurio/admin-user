@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav="matSidenav">
 
-        <img class="avatar" [src]="userView.avatar" />
+        <img class="avatar" [src]="userView.avatar"/>
         <h4 class="name">
             <mat-icon color="primary">person</mat-icon>
             {{userView.first_name}} {{userView.last_name}}
@@ -16,7 +16,7 @@
         </button>
 
         <mat-divider></mat-divider>
-
+            <app-posts [idUser]=userView.id></app-posts>
         <mat-divider></mat-divider>
 
         <button color="primary" mat-button class="menu-button" (click)="sidenav.toggle()">

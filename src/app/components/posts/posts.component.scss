@@ -1,0 +1,49 @@
+mat-list {
+
+    overflow-y: auto;
+    max-height: 30vh;
+    min-height: 30vh;
+
+    &::-webkit-scrollbar {
+        border-radius: 10px;
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #e91e63;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background: white;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #333434;
+    }
+
+    mat-list-item {
+        color: white;
+
+        .post-title {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .post-body {
+            // min-width: 300px;
+            // max-width: 300px;
+            width: 90%;
+
+            p::after {
+                background-color: red;
+                word-break: break-all;
+                float: right;
+                display: flex;
+                align-items: center;
+                word-break: break-all;
+                margin: 0 0 1em 1em;
+            }
+        }
+    }
+
+}
