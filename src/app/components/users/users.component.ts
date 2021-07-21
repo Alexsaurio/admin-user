@@ -6,6 +6,7 @@ import { User } from 'src/app/core/models/user.model';
 
 // importacion de servicios
 import { UserService } from 'src/app/core/services/user/user.service';
+import { AlertService } from 'src/app/core/services/alert/alert.service';
 
 @Component({
   selector: 'app-users',
@@ -26,7 +27,7 @@ export class UsersComponent implements OnInit {
   length = 12;
   pageSize = 6;
 
-  constructor(private userservice: UserService) {  }
+  constructor(private userservice: UserService, private as: AlertService) {  }
 
   ngOnInit(): void {
     this.getUsersList(1);
@@ -39,10 +40,9 @@ export class UsersComponent implements OnInit {
         this.pageSize = response.per_page;
         this.length = response.total;
         this.dataSource = new MatTableDataSource(this.usersList);
-        console.log(response);
       },
       error =>{
-        console.log(error);
+        this.as.alertError(error.message);
       }
     )
   }
