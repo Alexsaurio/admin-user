@@ -1,0 +1,29 @@
+table {
+    width: 90vw;
+}
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+    border-color: #e91e63;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.align-name {
+    display: flex;
+    align-items: center;
+
+    .avatar-img {
+        border-radius: 100px;
+        width: 8%;
+        margin: 5px 15px;
+    }
+}

@@ -17,7 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
-// import { MatListItemModule } from '@angular/material/';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 // importacion de servicios
@@ -60,7 +61,9 @@ import { UsersComponent } from './components/users/users.component';
     MatSidenavModule,
     MatDividerModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule
     
   ],
   providers: [UserService, AuthService],
