@@ -10,6 +10,10 @@
             <p class="designation">
                 <mat-icon color="primary">email</mat-icon>
                 {{userView.email}}
+                <span *ngIf="userForm.value.job">
+                    <mat-icon color="primary">build</mat-icon>
+                    {{userForm.value.job}}
+                </span>
             </p>
             <button (click)="changeEdit()" mat-icon-button color="primary" aria-label="Edit information"
                 matTooltip="Edit information" matTooltipPosition="right">

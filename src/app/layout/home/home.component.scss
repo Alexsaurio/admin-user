@@ -34,6 +34,10 @@
             color: lightgrey;
             @extend .align-icon-text;
             justify-content: center;
+
+            span{
+                margin-left: 10px;
+            }
         }
 
         mat-divider {
