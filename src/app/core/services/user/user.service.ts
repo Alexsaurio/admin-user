@@ -16,7 +16,7 @@ export class UserService {
 
   // urls para el consumo de API post
   private urlPosts = env.urlPost + 'posts?userId=';
-  private urlDelPost = env.urlPost + 'posts/';
+  private urlPost = env.urlPost + 'posts/';
 
   constructor(private http: HttpClient) { }
 
@@ -33,7 +33,7 @@ export class UserService {
   }
 
   deleteUserPost(postId: number): Observable<any> {
-    return this.http.delete<any>(this.urlDelPost + postId);
+    return this.http.delete<any>(this.urlPost + postId);
   }
 
 }

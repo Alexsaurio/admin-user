@@ -1,11 +1,11 @@
 import { Component, OnInit,OnChanges, Input } from '@angular/core';
 
-// importacion de los posts del usuario
+// importacion de los servicios
 import { UserService } from 'src/app/core/services/user/user.service';
+import { AlertService } from 'src/app/core/services/alert/alert.service';
 
 // importacion de modelos
 import { Post } from 'src/app/core/models/post.model';
-import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-posts',
@@ -20,7 +20,7 @@ export class PostsComponent implements OnInit, OnChanges {
   postsUserLength: number;
   msgError = '';
 
-  constructor(private userservice: UserService) { }
+  constructor(private userservice: UserService, private as: AlertService) { }
 
   ngOnInit(): void {
     this.getPostsUser(this.idUser);
@@ -37,7 +37,7 @@ export class PostsComponent implements OnInit, OnChanges {
         this.postsUserLength =  this.postsUser.length;
       },
       error => {
-        console.log(error);
+        this.as.alertError(error.message);
       }
     )
   }
@@ -48,10 +48,10 @@ export class PostsComponent implements OnInit, OnChanges {
       response =>{
         this.postsUser = this.postsUser.filter(post => post.id !== postId);
         this.postsUserLength =  this.postsUser.length;
-        console.log(response);
+        this.as.alertSuccess("Delete post id "+postId)
       },
       error => {
-        console.log(error)
+        this.as.alertError(error.message);
       }
     )
   }
