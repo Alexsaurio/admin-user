@@ -47,6 +47,20 @@
             @extend .align-icon-text;
             justify-content: flex-start;
         }
+
+        .form-edit{
+            background-color: white;
+
+            form{
+                margin-top: 10px;
+                padding-bottom: 20px;
+                color: black;
+            }
+
+            .button button{
+                margin-right: 10px;
+            }
+        }
     }
 
     .sidenav-content {

@@ -1,22 +1,44 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav="matSidenav">
 
-        <img class="avatar" [src]="userView.avatar"/>
-        <h4 class="name">
-            <mat-icon color="primary">person</mat-icon>
-            {{userView.first_name}} {{userView.last_name}}
-        </h4>
-        <p class="designation">
-            <mat-icon color="primary">email</mat-icon>
-            {{userView.email}}
-        </p>
-        <button mat-icon-button color="primary" aria-label="Edit information"
-            matTooltip="Edit information" matTooltipPosition="right">
-            <mat-icon>edite</mat-icon>
-        </button>
+        <div *ngIf="!isEdit">
+            <img class="avatar" [src]="userView.avatar" />
+            <h4 class="name">
+                <mat-icon color="primary">person</mat-icon>
+                {{userView.first_name}} {{userView.last_name}}
+            </h4>
+            <p class="designation">
+                <mat-icon color="primary">email</mat-icon>
+                {{userView.email}}
+            </p>
+            <button (click)="changeEdit()" mat-icon-button color="primary" aria-label="Edit information"
+                matTooltip="Edit information" matTooltipPosition="right">
+                <mat-icon>edite</mat-icon>
+            </button>
+        </div>
+
+        <div *ngIf="isEdit" class="form-edit">
+            <img class="avatar" [src]="userView.avatar" />
+            <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="name" formControlName="name" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type="text" matInput placeholder="job" formControlName="job" required>
+                </mat-form-field>
+
+                <div class="button">
+                    <button type="submit" mat-raised-button color="primary" [disabled]="userForm.invalid">Update</button>
+                    <button (click)="changeEdit()" mat-raised-button color="accent">Cancel</button>
+                </div>
+            </form>
+        </div>
 
         <mat-divider></mat-divider>
-            <app-posts [idUser]=userView.id></app-posts>
+
+        <app-posts [idUser]=userView.id></app-posts>
+
         <mat-divider></mat-divider>
 
         <button color="primary" mat-button class="menu-button" (click)="sidenav.toggle()">
