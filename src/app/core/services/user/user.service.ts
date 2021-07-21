@@ -28,6 +28,10 @@ export class UserService {
     return this.http.get<any>(this.urlUsers + '?page=' + page);
   }
 
+  putUserDetail(userId: number, objUser: any): Observable<any> {
+    return this.http.put<any>(this.urlUsers + "/" + userId, objUser);
+  }
+
   getUserPosts(userId: number): Observable<any> {
     return this.http.get<any>(this.urlPosts + userId);
   }
