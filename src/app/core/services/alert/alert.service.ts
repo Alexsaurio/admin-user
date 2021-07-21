@@ -15,7 +15,8 @@ export class AlertService {
       title: 'Success!',
       text: msg,
       icon: 'success',
-      confirmButtonText: 'Acept'
+      showConfirmButton: false,
+      timer: 1500
     })
   }
 
