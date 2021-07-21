@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 // // importacion de servicio de login
@@ -15,15 +15,15 @@ export class RegisterComponent implements OnInit {
 
   msgError = '';
 
-  newUserForm: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
+  newUserForm: FormGroup;
 
-  constructor(private authservice: AuthService, private router: Router) { }
+  constructor(private authservice: AuthService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log(':D')
+    this.newUserForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 
   register() {
