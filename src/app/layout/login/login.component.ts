@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 // importacion de servicio de login
 import { AuthService } from 'src/app/core/services/auth/auth.service';
@@ -13,16 +12,15 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 export class LoginComponent implements OnInit {
 
   msgError = '';
+  userForm: FormGroup;
 
-  userForm: FormGroup = new FormGroup({
-    email: new FormControl('eve.holt@reqres.in'),
-    password: new FormControl('pistol'),
-  });
-
-  constructor(private authservice: AuthService, private router: Router) { }
+  constructor(private authservice: AuthService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log(':)')
+    this.userForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 
   login() {
