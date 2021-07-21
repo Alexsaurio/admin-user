@@ -32,7 +32,13 @@ export class HomeComponent implements OnInit {
 
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userservice: UserService, private as: AlertService, private authservice: AuthService) { }
+  constructor(private fb: FormBuilder, private userservice: UserService, private as: AlertService, private authservice: AuthService) {
+    this.userForm = this.fb.group
+    ({
+      name: new FormControl(''),
+      job: new FormControl(''),
+    });
+  }
 
   ngOnInit(): void {
     this.getUserDetail(2);
