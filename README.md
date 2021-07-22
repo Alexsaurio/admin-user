@@ -1,17 +1,17 @@
 
 # Administración de usuarios 📑.
 
-Aplicación encargada de la adminsitración de usuarios, así como, mostrar sus posts que contiene cada uno de estos.
+Aplicación encargada de la administración de usuarios, así como, mostrar sus posts que contiene cada uno de estos.
 
 
 ## Características.
 
 - Inicio de sesión del usuario.
 - Registro de usuario.
-- Visualización del listado de usario.
+- Visualización del listado de usuario.
 - Edición de la información del usuario.
 - Visualización del listado de posts del usuario.
-- Elimiacion de posts del usario seleccionado.
+- Elimiación de posts del usuario seleccionado.
 
   
 ## Ejecutar localmente 💻.
@@ -132,7 +132,7 @@ Recibe el id del usuario a editar junto con sus nuevos datos.
 
 | Parámetro    | Tipo     | Descripción                       |
 | :----------- | :------- | :-------------------------------- |
-| `email`      | `string` | email para el inicio de session.  |
+| `email`      | `string` | email para el inicio de sesión.  |
 | `password`   | `string` | contraseña del emial seleccionado.|
 
 
@@ -155,8 +155,8 @@ Recibe el objeto con las credenciales del usuario que solicita el inicio de sesi
 
 | Parámetro    | Tipo     | Descripción                       |
 | :----------- | :------- | :-------------------------------- |
-| `email`      | `string` | email para el inicio de session.  |
-| `password`   | `string` | contraseña del emial seleccionado.|
+| `email`      | `string` | email para el inicio de sesión.  |
+| `password`   | `string` | contraseña del email seleccionado.|
 
 
 #### f register(logObj)
@@ -191,7 +191,7 @@ Servicios utilizados:
 
 #### f getUserPosts(userId: number)
 
-Recibe el id del usario para retornar un array con sus posts creados.
+Recibe el id del usuario para retornar un array con sus posts creados.
 
 
 #### Eliminar un posts de un usuario.
