@@ -1,10 +1,10 @@
 
-# Administración de usuarios 📑
+# Administración de usuarios 📑.
 
 Aplicación encargada de la adminsitración de usuarios, así como, mostrar sus posts que contiene cada uno de estos.
 
 
-## Características
+## Características.
 
 - Inicio de sesión del usuario.
 - Registro de usuario.
@@ -14,7 +14,7 @@ Aplicación encargada de la adminsitración de usuarios, así como, mostrar sus 
 - Elimiacion de posts del usario seleccionado.
 
   
-## Ejecutar localmente 💻
+## Ejecutar localmente 💻.
 
 Clonar proyecto del repositorio.
 
@@ -194,7 +194,7 @@ Servicios utilizados:
 Recibe el id del usario para retornar un array con sus posts creados.
 
 
-#### Eliminar un posts de un usuario
+#### Eliminar un posts de un usuario.
 
 ```http
   DELETE /posts/${postId}
@@ -209,7 +209,7 @@ Recibe el id del usario para retornar un array con sus posts creados.
 
 Recibe el id del post para eliminar el registro seleccionado.
 
-  ## Referencias de color 🤙🏼
+  ## Referencias de color 🤙🏼.
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
@@ -222,7 +222,7 @@ Recibe el id del post para eliminar el registro seleccionado.
 | Black | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 
 
-## Tecnologías
+## Tecnologías.
 
 **Frontend:** Angular, SASS, angular-material
 
