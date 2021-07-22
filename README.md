@@ -1,40 +1,40 @@
 
-# Administracion de usuarios 📑
+# Administración de usuarios 📑
 
-Aplicación encargada de la adminsitración de usuarios, asi como, mostra su posts que contiene cada uno de estos.
+Aplicación encargada de la adminsitración de usuarios, así como, mostrar sus posts que contiene cada uno de estos.
 
 
 ## Características
 
-- Logeo de usuario.
+- Inicio de sesión del usuario.
 - Registro de usuario.
-- Visualizacion del listado de usario.
-- Edicion de la información del usuario.
-- Visualizacion del listado de posts del usuario.
+- Visualización del listado de usario.
+- Edición de la información del usuario.
+- Visualización del listado de posts del usuario.
 - Elimiacion de posts del usario seleccionado.
 
   
 ## Ejecutar localmente 💻
 
-Clonar proyecto del repositorio
+Clonar proyecto del repositorio.
 
 ```bash
   git clone https://github.com/Alexsaurio/admin-user
 ```
 
-Dirigirse al directorio del proyecto
+Dirigirse al directorio del proyecto.
 
 ```bash
   cd admin-user
 ```
 
-Instalar dependencias del proyecto
+Instalar dependencias del proyecto.
 
 ```bash
   npm install
 ```
 
-Iniciar el servidor localmente
+Iniciar el servidor localmente.
 
 ```bash
   npm run start
@@ -43,7 +43,7 @@ Iniciar el servidor localmente
 ```
 
   
-## Variables de entorno
+## Variables de entorno.
 
 Este proyecto contiene viriables de entorno las cuales son usadas dentro de los servicios construidos.
 
@@ -52,16 +52,16 @@ Este proyecto contiene viriables de entorno las cuales son usadas dentro de los 
 `urlPost: https://jsonplaceholder.typicode.com/`
 
 
-## sessionStorage
+## sessionStorage.
 
 El proyecto almacena algunos datos dentro del `sessionStorage` que son los siguiente:
 
-`token: sessionStorage.getItem('token');` retorna una cadena de texto
+`token: sessionStorage.getItem('token');` retorna una cadena de texto.
 
-`isAuth: sessionStorage.getItem('isAuth');` retorna success si esta authtentificado
+`isAuth: sessionStorage.getItem('isAuth');` retorna un cadena con el valor 'success' si esta authtentificado.
 
   
-## Referencias de la API de usuarios
+## Referencias de la API de usuarios.
 
 url API: [https://reqres.in/](https://reqres.in/)
 
@@ -69,44 +69,44 @@ Servicios utilizados:
 - userService
 - authService
 
-#### Obtener todos los usuarios por pagina
+#### Obtener todos los usuarios por página.
 
 ```http
   GET /api/users?page=${page}
 ```
 
-| Parametro | Tipo     | Descripcion                   |
+| Parámetro | Tipo     | Descripción                   |
 | :-------- | :------- | :---------------------------- |
-| `page`    | `number` | numero de pagina de usuarios  |
+| `page`    | `number` | número de página de usuarios  |
 
 
 #### f getUserPage(page: number)
 
-Recibe entero con el numero de la pagina a consultar lo que retorna la informacion.
+Recibe entero con el número de la página a consultar lo que retorna la información.
 
-#### Obtener los datos de un usuario
+#### Obtener los datos de un usuario.
 
 ```http
   GET /api/users/${userId}
 ```
 
-| Parametro | Tipo     | Descripcion                       |
+| Parámetro | Tipo     | Descripción                       |
 | :-------- | :------- | :-------------------------------- |
 | `userId`  | `number` | id del usuario seleccionado       | 
 
 
 #### f getUserDetail(userId: number)
 
-Recibe entero con el id del suario para obtener su informacion detallada.
+Recibe entero con el id del usuario para obtener su información detallada.
 
 
-#### Actualizar la informacion de un usuario
+#### Actualizar la información de un usuario.
 
 ```http
   PUT /api/users/${idUSer}
 ```
 
-| Parametro  | Tipo     | Descripcion                       |
+| Parámetro  | Tipo     | Descripción                       |
 | :--------- | :------- | :-------------------------------- |
 | `idUSer`   | `number` | id del usuario seleccionado       | 
 | `name`     | `string` | nombre del usuario                |
@@ -115,7 +115,7 @@ Recibe entero con el id del suario para obtener su informacion detallada.
 
 #### f putUserDetail(userId: number, objUser)
 
-Recibe el id del usario a editar junto con sus nuevos datos.
+Recibe el id del usuario a editar junto con sus nuevos datos.
 
 ```javascript
   const objUser =   {
@@ -124,13 +124,13 @@ Recibe el id del usario a editar junto con sus nuevos datos.
   }
 ```
 
-#### Iniciar sesion de usuario
+#### Inicio de sesión de usuario.
 
 ```http
   POST /api/login
 ```
 
-| Parametro    | Tipo     | Descripcion                       |
+| Parámetro    | Tipo     | Descripción                       |
 | :----------- | :------- | :-------------------------------- |
 | `email`      | `string` | email para el inicio de session   |
 | `password`   | `string` | contraseña del emial seleccionado |
@@ -138,7 +138,7 @@ Recibe el id del usario a editar junto con sus nuevos datos.
 
 #### f login(logObj)
 
-Recibe el objeto con las credenciales del usario que solicita el inicio de sesion.
+Recibe el objeto con las credenciales del usuario que solicita el inicio de sesión.
 
 ```javascript
   const logObj =   {
@@ -147,13 +147,13 @@ Recibe el objeto con las credenciales del usario que solicita el inicio de sesio
   } 
 ```
 
-#### Registra un nuevo usuario
+#### Registra un nuevo usuario.
 
 ```http
   POST /api/register
 ```
 
-| Parametro    | Tipo     | Descripcion                       |
+| Parámetro    | Tipo     | Descripción                       |
 | :----------- | :------- | :-------------------------------- |
 | `email`      | `string` | email para el inicio de session   |
 | `password`   | `string` | contraseña del emial seleccionado |
@@ -161,7 +161,7 @@ Recibe el objeto con las credenciales del usario que solicita el inicio de sesio
 
 #### f register(logObj)
 
-Recibe el objeto con las credenciales del nuevo usario que solicita su registro.
+Recibe el objeto con las credenciales del nuevo usuario que solicita su registro.
 
 ```javascript
   const logObj =   {
@@ -170,21 +170,21 @@ Recibe el objeto con las credenciales del nuevo usario que solicita su registro.
   } 
 ```
 
-## Referencias de la API de posts
+## Referencias de la API de posts.
 
 
 url API: [https://jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com)
 
-Servicios utilizados 
-- userService
+Servicios utilizados: 
+- userService.
 
-#### Obtener todos los posts de un usuario
+#### Obtener todos los posts de un usuario.
 
 ```http
   GET /posts?userId=${userId}
 ```
 
-| Parametro | Tipo     | Descripcion                   |
+| Parámetro | Tipo     | Descripción                   |
 | :-------- | :------- | :---------------------------- |
 | `userId`  | `number` | id del usuario seleccionado  |
 
@@ -200,7 +200,7 @@ Recibe el id del usario para retornar un array con sus posts creados.
   DELETE /posts/${postId}
 ```
 
-| Parametro | Tipo     | Descripcion                   |
+| Parámetro | Tipo     | Descripción                   |
 | :-------- | :------- | :---------------------------- |
 | `postId`  | `number` | id de un post del usuario     |
 
@@ -222,7 +222,7 @@ Recibe el id del post para eliminar el registro seleccionado.
 | Black | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 
 
-## Tecnologias
+## Tecnologías
 
-**Frontend:** Angular, sass, angular-material
+**Frontend:** Angular, SASS, angular-material
 
