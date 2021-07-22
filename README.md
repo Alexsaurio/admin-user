@@ -45,9 +45,9 @@ Iniciar el servidor localmente.
   
 ## Variables de entorno.
 
-Este proyecto contiene viriables de entorno las cuales son usadas dentro de los servicios construidos.
+Este proyecto contiene variables de entorno las cuales son usadas dentro de los servicios construidos.
 
-`urlUSer: : https://reqres.in/api/`
+`urlUSer: https://reqres.in/api/`
 
 `urlPost: https://jsonplaceholder.typicode.com/`
 
@@ -58,7 +58,7 @@ El proyecto almacena algunos datos dentro del `sessionStorage` que son los sigui
 
 `token: sessionStorage.getItem('token');` retorna una cadena de texto.
 
-`isAuth: sessionStorage.getItem('isAuth');` retorna un cadena con el valor 'success' si esta authtentificado.
+`isAuth: sessionStorage.getItem('isAuth');` retorna un cadena con el valor 'success' si esta autentificado.
 
   
 ## Referencias de la API de usuarios.
@@ -77,7 +77,7 @@ Servicios utilizados:
 
 | Parámetro | Tipo     | Descripción                   |
 | :-------- | :------- | :---------------------------- |
-| `page`    | `number` | número de página de usuarios  |
+| `page`    | `number` | número de página de usuarios. |
 
 
 #### f getUserPage(page: number)
@@ -92,7 +92,7 @@ Recibe entero con el número de la página a consultar lo que retorna la informa
 
 | Parámetro | Tipo     | Descripción                       |
 | :-------- | :------- | :-------------------------------- |
-| `userId`  | `number` | id del usuario seleccionado       | 
+| `userId`  | `number` | id del usuario seleccionado.      | 
 
 
 #### f getUserDetail(userId: number)
@@ -108,9 +108,9 @@ Recibe entero con el id del usuario para obtener su información detallada.
 
 | Parámetro  | Tipo     | Descripción                       |
 | :--------- | :------- | :-------------------------------- |
-| `idUSer`   | `number` | id del usuario seleccionado       | 
-| `name`     | `string` | nombre del usuario                |
-| `job`      | `string` | trabajo del usuario               |
+| `idUSer`   | `number` | id del usuario seleccionado.      | 
+| `name`     | `string` | nombre del usuario.               |
+| `job`      | `string` | trabajo del usuario.              |
 
 
 #### f putUserDetail(userId: number, objUser)
@@ -132,8 +132,8 @@ Recibe el id del usuario a editar junto con sus nuevos datos.
 
 | Parámetro    | Tipo     | Descripción                       |
 | :----------- | :------- | :-------------------------------- |
-| `email`      | `string` | email para el inicio de session   |
-| `password`   | `string` | contraseña del emial seleccionado |
+| `email`      | `string` | email para el inicio de session.  |
+| `password`   | `string` | contraseña del emial seleccionado.|
 
 
 #### f login(logObj)
@@ -155,8 +155,8 @@ Recibe el objeto con las credenciales del usuario que solicita el inicio de sesi
 
 | Parámetro    | Tipo     | Descripción                       |
 | :----------- | :------- | :-------------------------------- |
-| `email`      | `string` | email para el inicio de session   |
-| `password`   | `string` | contraseña del emial seleccionado |
+| `email`      | `string` | email para el inicio de session.  |
+| `password`   | `string` | contraseña del emial seleccionado.|
 
 
 #### f register(logObj)
@@ -186,7 +186,7 @@ Servicios utilizados:
 
 | Parámetro | Tipo     | Descripción                   |
 | :-------- | :------- | :---------------------------- |
-| `userId`  | `number` | id del usuario seleccionado  |
+| `userId`  | `number` | id del usuario seleccionado.  |
 
 
 #### f getUserPosts(userId: number)
@@ -202,7 +202,7 @@ Recibe el id del usario para retornar un array con sus posts creados.
 
 | Parámetro | Tipo     | Descripción                   |
 | :-------- | :------- | :---------------------------- |
-| `postId`  | `number` | id de un post del usuario     |
+| `postId`  | `number` | id de un post del usuario.    |
 
 
 #### f deleteUserPost(postId: number)
@@ -224,5 +224,5 @@ Recibe el id del post para eliminar el registro seleccionado.
 
 ## Tecnologías.
 
-**Frontend:** Angular, SASS, angular-material
+**Frontend:** Angular, SASS, angular-material.
 
